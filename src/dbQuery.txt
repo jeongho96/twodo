@@ -1,0 +1,2 @@
+CREATE SCHEMA f6team;
+USE f6team;
