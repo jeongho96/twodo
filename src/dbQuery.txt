@@ -1,15 +1,15 @@
-CREATE SCHEMA 'f6team';
-USE 'f6team';
+CREATE SCHEMA f6team;
+USE f6team;
 
-CREATE TABLE `f6team`.`testdb` (
+CREATE TABLE f6team.testdb (
   `id` INT NOT NULL AUTO_INCREMENT,
   `testString` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
 
-INSERT INTO `f6team`.`testdb` (`testString`) VALUES ('TEST1');
-INSERT INTO `f6team`.`testdb` (`testString`) VALUES ('TEST2');
+INSERT INTO f6team.testdb (`testString`) VALUES ('TEST1');
+INSERT INTO f6team.testdb (`testString`) VALUES ('TEST2');
 
-CREATE TABLE `f6team`.`todo` (
+CREATE TABLE f6team.todo (
   `id` INT NOT NULL AUTO_INCREMENT,
   `subject` VARCHAR(255) NULL,
   `detail` VARCHAR(255) NULL,
@@ -20,10 +20,10 @@ CREATE TABLE `f6team`.`todo` (
   `modifydate` DATETIME NULL,
   PRIMARY KEY (`id`));
 
-INSERT INTO `f6team`.`todo` (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test1', 'testcontent1', now(), 'N', 'N', now(), now());
-INSERT INTO `f6team`.`todo` (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test2', 'testcontent2', now(), 'N', 'N', now(), now());
-INSERT INTO `f6team`.`todo` (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test3must', 'testcontent3', now(), 'N', 'Y', now(), now());
-INSERT INTO `f6team`.`todo` (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test4must', 'testcontent4', now(), 'N', 'Y', now(), now());
-INSERT INTO `f6team`.`todo` (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test5done', 'testcontent5', now(), 'Y', 'N', now(), now());
-INSERT INTO `f6team`.`todo` (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test6done', 'testcontent6', now(), 'Y', 'N', now(), now());
-INSERT INTO `f6team`.`todo` (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test7mustdone', 'testcontent7', now(), 'Y', 'Y', now(), now());
+INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test1', 'testcontent1', now(), 'N', 'N', now(), now());
+INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test2', 'testcontent2', now(), 'N', 'N', now(), now());
+INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test3must', 'testcontent3', now(), 'N', 'Y', now(), now());
+INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test4must', 'testcontent4', now(), 'N', 'Y', now(), now());
+INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test5done', 'testcontent5', now(), 'Y', 'N', now(), now());
+INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test6done', 'testcontent6', now(), 'Y', 'N', now(), now());
+INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test7mustdone', 'testcontent7', now(), 'Y', 'Y', now(), now());
