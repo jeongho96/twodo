@@ -1,2 +1,10 @@
-CREATE SCHEMA f6team;
-USE f6team;
+CREATE SCHEMA 'f6team';
+USE 'f6team';
+
+CREATE TABLE `f6team`.`testdb` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `testString` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO `f6team`.`testdb` (`testString`) VALUES ('TEST1');
+INSERT INTO `f6team`.`testdb` (`testString`) VALUES ('TEST2');
