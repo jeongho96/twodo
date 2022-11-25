@@ -6,10 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PageController {
+public class IndexController {
     TestService obj_testservice;
 
-    public PageController(TestService _obj) {
+    public IndexController(TestService _obj) {
         this.obj_testservice = _obj;
     }
 

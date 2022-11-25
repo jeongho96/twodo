@@ -9,4 +9,12 @@
         FROM TestDB
     </select>
 
+
+    <select id="getToDo" resultType="com.f6.twodo.vo.ToDo">
+        SELECT *
+        FROM todo
+        ORDER BY id DESC
+        LIMIT #{maxcount}) OFFSET #{offset})
+    </select>
+
 </mapper>

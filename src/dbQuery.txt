@@ -8,3 +8,14 @@ CREATE TABLE `f6team`.`testdb` (
 
 INSERT INTO `f6team`.`testdb` (`testString`) VALUES ('TEST1');
 INSERT INTO `f6team`.`testdb` (`testString`) VALUES ('TEST2');
+
+CREATE TABLE `f6team`.`todo` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `subject` VARCHAR(255) NULL,
+  `detail` VARCHAR(255) NULL,
+  `targetdate` DATETIME NULL,
+  `done` CHAR(1) NULL,
+  `must` CHAR(1) NULL,
+  `insertdate` DATETIME NULL,
+  `modifydate` DATETIME NULL,
+  PRIMARY KEY (`id`));
