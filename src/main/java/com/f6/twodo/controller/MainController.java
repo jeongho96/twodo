@@ -24,5 +24,4 @@ public class MainController {
     public String main(Model _model) {
         return "main";
     }
-
 }
