@@ -14,9 +14,15 @@ public class MainController {
         this.obj_mainservice = _obj;
     }
 
-    @GetMapping("/main")
-    public String main(Model _model) {
+    @GetMapping("/maintest")
+    public String maintest(Model _model) {
         _model.addAttribute("value", "valuevalue");
         return "test";
     }
+
+    @GetMapping("/main")
+    public String main(Model _model) {
+        return "main";
+    }
+
 }
