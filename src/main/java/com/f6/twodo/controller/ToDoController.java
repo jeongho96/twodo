@@ -1,6 +1,5 @@
 package com.f6.twodo.controller;
 
-import com.f6.twodo.controller.dto.ToDoDTO;
 import com.f6.twodo.service.ToDoService;
 import com.f6.twodo.vo.ToDo;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,10 +30,13 @@ public class ToDoController {
     @ResponseBody
     public String todoAddNew(@RequestParam String subject,
                              @RequestParam String detail,
-                             @RequestParam("target_date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date target_date,
+                             @RequestParam("target_date")
+                                 @DateTimeFormat(pattern="yyyy-MM-dd")
+                                 Date target_date, // 형변환용
                              Model _model) {
         System.out.println("in todoAddNew");
         System.out.println("target_date:" + target_date);
+
         ToDo newToDo = new ToDo(subject, detail, target_date);
 
         System.out.println(newToDo.getSubject());

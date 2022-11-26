@@ -3,6 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.f6.twodo.mapper.ToDoMapper">
+    <select id="getTodayTodo" resultType="com.f6.twodo.vo.ToDo">
+        SELECT *
+        FROM todo
+        ORDER BY id DESC
+        LIMIT #{dispCount}
+    </select>
     <insert id="addToDo">
         INSERT INTO todo (subject, detail, targetdate, done, must, insertdate, modifydate)
         VALUES (#{todo.subject}, #{todo.detail}, #{todo.str_target_date}, 'N', 'N', now(), now())
