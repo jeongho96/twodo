@@ -6,5 +6,5 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 public class TwodoGlobal {
-    public final int diplay_todo_list_count = 3;
+    public final int diplay_todo_list_count = 5;
 }

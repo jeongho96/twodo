@@ -8,8 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface QueryMapper {
-    List<TestDB> dbTest();
-    List<ToDo> getToDo(@Param("maxcount") Integer maxcount, @Param("offset") Integer offset);
-    List<ToDo> addToDo(@Param("ToDo") ToDo todo);
+public interface ToDoMapper {
+    List<ToDo> getTodayTodo(Integer dispCount);
+    Integer addToDo(@Param("todo") ToDo todo);
 }

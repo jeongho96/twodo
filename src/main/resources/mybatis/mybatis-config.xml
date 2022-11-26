@@ -4,5 +4,7 @@
 <configuration>
     <mappers>
         <mapper resource = "mybatis/mapper/query-mapper.xml"/>
+        <mapper resource = "mybatis/mapper/todo-mapper.xml"/>
+        <mapper resource = "mybatis/mapper/blog-mapper.xml"/>
     </mappers>
 </configuration>

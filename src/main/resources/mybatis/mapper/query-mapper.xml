@@ -14,7 +14,7 @@
         SELECT *
         FROM todo
         ORDER BY id DESC
-        LIMIT #{maxcount}) OFFSET #{offset})
+        LIMIT #{maxcount} OFFSET #{offset}
     </select>
 
 </mapper>
