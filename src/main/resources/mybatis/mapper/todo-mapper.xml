@@ -4,7 +4,7 @@
 
 <mapper namespace="com.f6.twodo.mapper.ToDoMapper">
     <insert id="addToDo">
-        INSERT INTO member (subject, detail, targetdate, done, must, insertdate, modifydate)
-        VALUES (#{todo.subject}, #{todo.detail}, #{todo.targetdate}, #{todo.done}, now(), now())
+        INSERT INTO todo (subject, detail, targetdate, done, must, insertdate, modifydate)
+        VALUES (#{todo.subject}, #{todo.detail}, #{todo.str_target_date}, 'N', 'N', now(), now())
     </insert>
 </mapper>

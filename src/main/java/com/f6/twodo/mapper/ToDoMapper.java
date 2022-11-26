@@ -9,5 +9,5 @@ import java.util.List;
 
 @Mapper
 public interface ToDoMapper {
-    Integer addToDo(@Param("ToDo") ToDo todo);
+    Integer addToDo(@Param("todo") ToDo todo);
 }

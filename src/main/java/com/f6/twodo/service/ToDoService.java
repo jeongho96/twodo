@@ -11,6 +11,7 @@ public class ToDoService {
     private ToDoMapper obj_todo_mapper;
 
     public Integer addToDo(ToDo _newrow) {
+        System.out.println("AddToDO:" + _newrow.getSubject());
         Integer rowcount =  obj_todo_mapper.addToDo(_newrow);
         return rowcount;
     }
