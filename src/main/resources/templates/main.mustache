@@ -1,9 +1,17 @@
 {{>common/header}}
 
-
+<!-- jQuery를 import 합니다 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <div class="container text-center">
         <div class="row">
             <h2 class="pb-2 border-bottom">To do list</h2>
+
+            <div class = 'weather'>
+                <div class = 'CurrIcon'></div>
+                <div class = 'CurrTemp'></div>
+                <div class = 'City'></div>
+            </div>
+
             <div class = "col">
                 <div class="list-group w-auto">
                     <h3>yesterday</h3>
@@ -181,7 +189,26 @@
 
 
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            type: "GET", // GET 방식으로 요청한다.
+            url: "http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=b9661ebfbd79cba1593063a1146d5ff5&units=metric",
 
+            data: {}, // 요청하면서 함께 줄 데이터 (GET 요청시엔 비워두세요)
+            success: function (response) { // 서버에서 준 결과를 response라는 변수에 담음
+                //console.log(response) // 서버에서 준 결과를 이용해서 나머지 코드를 작성
+                let $Icon = (response.weather[0].icon);
+                let $Temp = Math.floor(response.main.temp) + 'º';
+                let $city = response.name;
+
+                // $('.CurrIcon').append('http://openweathermap.org/img/w/'+ $Icon + '.png');
+                $('.CurrTemp').prepend($Temp);
+                $('.City').append($city);
+            }
+        })
+    });
+</script>
 
 
 
