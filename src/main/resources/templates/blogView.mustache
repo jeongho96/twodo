@@ -1,0 +1,55 @@
+{{>common/header}}
+
+<script>
+    function checkDelete(id) {
+        var r = confirm("블로그를 삭제하시겠습니까?");
+        if (r == true) {
+            location.href = "/main/blog/del/" + id;
+        } else {
+            alert("취소하셨습니다");
+        }
+    }
+</script>
+
+<div style="width:100%;height:100%;">
+    <div style="width:500px;height:100%;margin:0 auto;">
+        <h1>등록된 블로그</h1>'
+        <h3>비밀여부</h3>
+        <br>
+        <p>{{blogOnce.secret}}</p>
+        <br>
+        <h4>기록제목</h4>
+        <p>{{blogOnce.title}}</p>
+        <br>
+        <h4>일정내용 일시</h4>
+        <br>
+        <p>{{blogOnce.content}}</p>
+        <br>
+        <h4>등록된 사진</h4>
+        <br>
+        {{#blogOnce.orifilename}}
+            <p>{{blogOnce.orifilename}}</p>
+            <p><img src = "/upload/{{blogOnce.filename}}" width="300" height="300"></p>
+        {{/blogOnce.orifilename}}
+        {{^blogOnce.orifilename}}
+            <p>사진없음</p>
+        {{/blogOnce.orifilename}}
+        <br>
+        <h4>장소</h4>
+        <br>
+        <p>{{blogOnce.locationtag}}</p>
+        <br>
+        <h4>별점</h4>
+        <br>
+        <p>{{blogOnce.starDisp}}</p>
+        <br>
+
+        <input type="button" value="수정하기" onclick="javascript:location.href='/main/blog/modify/{{id}}'"; />
+        <input type="button" value="홈으로" onclick="javascript:location.href='/main'"; />
+        <input type="button" value="삭제" onclick="javascript:checkDelete({{blogOnce.id}});"/>
+        <br>
+        <br>
+    </div>
+</div>
+
+{{>common/footer}}

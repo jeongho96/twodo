@@ -3,14 +3,23 @@ package com.f6.twodo.controller;
 import com.f6.twodo.TwodoGlobal;
 import com.f6.twodo.service.MainService;
 import com.f6.twodo.service.TestService;
+import com.f6.twodo.vo.Blog;
 import com.f6.twodo.vo.ToDo;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Controller
@@ -63,6 +72,9 @@ public class MainController {
         _model.addAttribute("getNextTodoDoneCount",NTDC);
         _model.addAttribute("getNextIncomplete", NI);
 
+        List<Blog> blogList = this.obj_mainservice.getBlogList(6);
+        _model.addAttribute("blogList", blogList);
+
         return "main";
     }
     @GetMapping("/main/tododone/{id}")
@@ -72,5 +84,21 @@ public class MainController {
             return "<script> alert('일정완료'); location.href='/main'; </script>";
         }
         return "<script> alert('id 또는 시스템 오류 오류');</script>";
+    }
+    @GetMapping(path = "/upload/{filename}")
+    public void getLocalImage(@PathVariable(name = "filename") String filename, HttpServletResponse response)
+            throws IOException {
+
+        System.out.println("getLocalImage");
+        Path path = Paths.get("C:/FileUpload/F6/" + filename);
+        System.out.println(path.toUri());
+        Resource resource = new UrlResource(path.toUri());
+        if(resource.exists()) {
+            IOUtils.copy(resource.getInputStream(), response.getOutputStream());
+        }
+        else {
+            ClassPathResource cpr = new ClassPathResource("/static/img/file_empty.png");
+            IOUtils.copy(cpr.getInputStream(), response.getOutputStream());
+        }
     }
 }

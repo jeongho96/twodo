@@ -10,8 +10,11 @@ import java.util.List;
 
 @Mapper
 public interface BlogMapper {
-    List<Blog> getBlogMemory();
-
+    List<Blog> getBlogList(@Param("dispCount") Integer dispCount);
+    Blog getBlogOnce(@Param("id") Integer id);
+    
     Integer addBlog(@Param("blog")Blog blog);
+    Integer modBlog(@Param("blog")Blog blog);
+    Integer delBlog(@Param("id") Integer id);
 
 }

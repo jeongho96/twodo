@@ -1,48 +1,24 @@
-<!DOCTYPE html>
+{{>common/header}}
 
-<HEAD>
-    <title>2DO 기록수정</title>
-</HEAD>
-<BODY>
+<div style="width:100%;height:100%;">
+    <div style="width:500px;height:100%;margin:0 auto;">
+        <form action="/main/blog/mod" method="post">
+            <h1>기록을 등록해보세요!</h1>
+            <input type="hidden" name="id" value="{{blogOnce.id}}" >
 
-<form action="/" >
-    <button src="/"> 메인으로 돌아기기 </button>
-    <h1>기록을 수정해보세요!</h1>
+            <h3>기록제목</h3>
+            <input type="text" name="title" value="{{blogOnce.title}}">
 
-    <h3>비밀여부</h3>
-    <select name="openOrhidden">
-        <option value="open">공개</option>
-        <option value="hidden">비밀</option>
-    </select>
+            <h4>일정내용</h4>
+            <textarea name="content">{{blogOnce.content}}</textarea>
 
+            <h4>장소 등록</h4>
+            <input type="text" name="locationtag" value="{{blogOnce.locationtag}}">
 
-    <h3>기록제목</h3>
-    <input type="text" name="logTitle" >
-
-    <h4>일정내용</h4>
-    <textarea name="logData"> </textarea>
-
-    <h4>사진 등록</h4>
-    <input type="file" name="photo">
-
-    <h4>장소 등록</h4>
-    <input type="text" name="location">
-
-    <h3>이 기록의 별점을 기록해주세요</h3>
-    <select name="star">
-        <option value="1">★</option>
-        <option value="2">★★</option>
-        <option value="3">★★★</option>
-        <option value="4">★★★★</option>
-        <option value="5">★★★★★</option>
-    </select>
-
-    <br>
-    <br>
-    <input type="submit" value="등록" />
-
-
-</form>
-</BODY>
-
-</HTML>
+            <br>
+            <br>
+            <input type="submit" value="수정" />
+        </form>
+    </div>
+</div>
+{{>common/footer}}

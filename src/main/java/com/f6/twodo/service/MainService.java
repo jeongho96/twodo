@@ -1,6 +1,8 @@
 package com.f6.twodo.service;
 
+import com.f6.twodo.mapper.BlogMapper;
 import com.f6.twodo.mapper.ToDoMapper;
+import com.f6.twodo.vo.Blog;
 import com.f6.twodo.vo.ToDo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,14 @@ import java.util.List;
 public class MainService {
     @Autowired
     private ToDoMapper obj_todo_mapper;
+    @Autowired
+    private BlogMapper obj_blog_mapper;
+
+    public List<Blog> getBlogList(Integer dispCount) {
+        System.out.println("getBlogList");
+        List<Blog> blogList =  obj_blog_mapper.getBlogList(dispCount);
+        return blogList;
+    }
 
     /*BeforeTodo start*/
     public List<ToDo> getBeforeTodo(Integer dispCount) {
