@@ -15,4 +15,8 @@ public class ToDoService {
         Integer rowcount =  obj_todo_mapper.addToDo(_newrow);
         return rowcount;
     }
+    public ToDo viewToDo(Integer id) {
+        System.out.println("viewTodo : " + id);
+        return  obj_todo_mapper.getTodoOnce(id);
+    }
 }

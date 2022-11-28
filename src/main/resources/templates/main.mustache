@@ -28,25 +28,26 @@
                     <h3>BEFORE</h3>
 
                     {{#beforeTodo}}
-                    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                         {{#state}}
                             <img src="/img/todo_done.png" width="32" height="32" class="rounded-circle flex-shrink-0">
                         {{/state}}
                         {{^state}}
                             <img src="/img/todo_proc.png" alt="change Done" width="32" height="32" class="rounded-circle flex-shrink-0" onclick="javascript:checkDone({{id}});">
                         {{/state}}
-                        <div class="d-flex gap-2 w-100 justify-content-between">
-                            <div>
-                                <h6 class="mb-0">{{subject}}</h6>
-                                <p class="mb-0 opacity-75">{{detail}}</p>
+                        <a href="/main/todo/view/{{id}}" class="list-group-item list-group-item-action">
+                            <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                    <h6 class="mb-0">{{subject}}</h6>
+                                    <p class="mb-0 opacity-75">{{detail}}</p>
+                                </div>
+                                <small class="opacity-50 text-nowrap">{{str_target_date}}</small>
                             </div>
-                            <small class="opacity-50 text-nowrap">{{str_target_date}}</small>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                     {{/beforeTodo}}
                     {{#beforeempty}}
                         <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
                             <div class="d-flex gap-2 w-100 justify-content-between">
                                 <div>
                                     <h6 class="mb-0">일정없음</h6>
@@ -62,25 +63,26 @@
                 <div class="list-group w-auto">
                     <h3>TODAY</h3>
                     {{#todayTodo}}
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                             {{#state}}
                                 <img src="/img/todo_done.png" width="32" height="32" class="rounded-circle flex-shrink-0">
                             {{/state}}
                             {{^state}}
                                 <img src="/img/todo_proc.png" alt="change Done" width="32" height="32" class="rounded-circle flex-shrink-0" onclick="javascript:checkDone({{id}});">
                             {{/state}}
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">{{subject}}</h6>
-                                    <p class="mb-0 opacity-75">{{detail}}</p>
+                            <a href="/main/todo/view/{{id}}" class="list-group-item list-group-item-action">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0">{{subject}}</h6>
+                                        <p class="mb-0 opacity-75">{{detail}}</p>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">{{str_target_date}}</small>
                                 </div>
-                                <small class="opacity-50 text-nowrap">{{str_target_date}}</small>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     {{/todayTodo}}
                     {{#empty}}
                         <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
                             <div class="d-flex gap-2 w-100 justify-content-between">
                                 <div>
                                     <h6 class="mb-0">일정없음</h6>
@@ -97,25 +99,26 @@
                     <h3>NEXT</h3>
 
                     {{#nextTodo}}
-                    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                         {{#state}}
                             <img src="/img/todo_done.png" width="32" height="32" class="rounded-circle flex-shrink-0">
                         {{/state}}
                         {{^state}}
                             <img src="/img/todo_proc.png" alt="change Done" width="32" height="32" class="rounded-circle flex-shrink-0" onclick="javascript:checkDone({{id}});">
                         {{/state}}
-                        <div class="d-flex gap-2 w-100 justify-content-between">
-                            <div>
-                                <h6 class="mb-0">{{subject}}</h6>
-                                <p class="mb-0 opacity-75">{{detail}}</p>
+                        <a href="/main/todo/view/{{id}}" class="list-group-item list-group-item-action">
+                            <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                    <h6 class="mb-0">{{subject}}</h6>
+                                    <p class="mb-0 opacity-75">{{detail}}</p>
+                                </div>
+                                <small class="opacity-50 text-nowrap">{{str_target_date}}</small>
                             </div>
-                            <small class="opacity-50 text-nowrap">{{str_target_date}}</small>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                     {{/nextTodo}}
                     {{#nextempty}}
                         <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
                             <div class="d-flex gap-2 w-100 justify-content-between">
                                 <div>
                                     <h6 class="mb-0">일정없음</h6>

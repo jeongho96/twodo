@@ -1,0 +1,34 @@
+{{>common/header}}
+
+<script>
+    function checkDone(id) {
+        var r = confirm("일정을 완료하셨습니까?");
+        if (r == true) {
+            location.href = "/main/tododone/" + id;
+        } else {
+            alert("취소하셨습니다");
+        }
+    }
+</script>
+
+<div style="width:100%;height:100%;">
+<div style="width:500px;height:100%;margin:0 auto;">
+        <h1>등록된 일정</h1>'
+        <h3>일정제목</h3>
+        <br>
+        <p>{{todoOnce.subject}}</p>
+        <br>
+        <h4>일정내용</h4>
+        <p>{{todoOnce.detail}}</p>
+        <br>
+        <h4>등록 일시</h4>
+        <br>
+        <p>{{todoOnce.str_target_date}}</p>
+        <br>
+        <br>
+        <input type="button" value="수정하기" />
+        <input type="button" value="완료" onclick="javascript:checkDone(1);"/>
+    </div>
+</div>
+
+{{>common/footer}}
