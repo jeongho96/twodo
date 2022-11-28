@@ -21,6 +21,7 @@ public class ToDo {
     String state;        // 완료면 객체 있음, 미완이면 객체 없음
 
     String must;        // 중요여부 (Y면 중요, N면 일반)
+    String muststate;   // 중요면 객체 있음, 안 중요이면 객체 없음
     Date  insert_date;   // 등록일시
     Date modify_date;   // 수정일시
 
@@ -52,6 +53,12 @@ public class ToDo {
         }
         else {
             state = null;
+        }
+        if(must.equals("Y")) {
+            muststate = "Y";
+        }
+        else {
+            muststate = null;
         }
         System.out.println("makeData:state-" + state);
     }

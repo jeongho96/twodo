@@ -41,6 +41,8 @@ public class MainController {
         _model.addAttribute("empty",todayList.isEmpty());
         _model.addAttribute("beforeempty",beforeList.isEmpty());
         _model.addAttribute("nextempty",nextList.isEmpty());
+        _model.addAttribute("getBeforeTodoCount",this.obj_mainservice.getBeforeTodoCount());
+
         return "main";
     }
     @GetMapping("/main/tododone/{id}")

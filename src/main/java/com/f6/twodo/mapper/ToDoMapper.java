@@ -14,4 +14,6 @@ public interface ToDoMapper {
     List<ToDo> getNextTodo(Integer dispCount);
     Integer addToDo(@Param("todo") ToDo todo);
     Integer doneToDo(Integer todoID);
+
+    Integer getBeforeTodoCount();
 }
