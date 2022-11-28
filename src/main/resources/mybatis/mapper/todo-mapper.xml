@@ -6,7 +6,14 @@
     <select id="getTodayTodo" resultType="com.f6.twodo.vo.ToDo">
         SELECT *
         FROM todo
-        WHERE date_format(targetdate, '%Y-%m-%d') = date_format(now(),  '%Y-%m-%d')
+        WHERE date_format(targetdate, '%Y-%m-%d') = date_format(now(), '%Y-%m-%d')
+        LIMIT #{dispCount}
+    </select>
+    <select id="getBeforeTodo" resultType="com.f6.twodo.vo.ToDo">
+        SELECT *
+        FROM todo
+        WHERE <![CDATA[date_format(targetdate, '%Y-%m-%d') < date_format(now(), '%Y-%m-%d')]]>
+        ORDER BY targetdate DESC
         LIMIT #{dispCount}
     </select>
     <insert id="addToDo">
