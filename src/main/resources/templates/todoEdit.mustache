@@ -1,0 +1,24 @@
+{{>common/header}}
+
+<div style="width:100%;height:100%;">
+    <div style="width:500px;height:100%;margin:0 auto;">
+        <form action="/main/todo/edit" method="post">
+            <h1>일정을 수정해보세요!</h1>
+
+            <h3>일정제목</h3>
+            <input type="text" name="subject" >
+
+            <h4>일정내용</h4>
+            <input type="text" name="detail" >
+
+            <h4>마감일시</h4>
+            <input type="date" name="target_date" value="2022-11-25" max="2023-12-31" >
+            <br>
+            <br>
+            <input type="submit" value="수정" />
+            <input type="submit" value="삭제" />
+        </form>
+    </div>
+</div>
+{{>common/footer}}
+
