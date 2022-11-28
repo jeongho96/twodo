@@ -15,7 +15,6 @@ public class MainService {
     public List<ToDo> getTodayTodo(Integer dispCount) {
         System.out.println("getTodayTodo");
         List<ToDo> todayTodo =  obj_todo_mapper.getTodayTodo(dispCount);
-
         return todayTodo;
     }
 }

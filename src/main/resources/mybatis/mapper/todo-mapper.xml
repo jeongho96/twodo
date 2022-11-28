@@ -6,7 +6,7 @@
     <select id="getTodayTodo" resultType="com.f6.twodo.vo.ToDo">
         SELECT *
         FROM todo
-        ORDER BY id DESC
+        WHERE date_format(targetdate, '%Y-%m-%d') = date_format(now(),  '%Y-%m-%d')
         LIMIT #{dispCount}
     </select>
     <insert id="addToDo">

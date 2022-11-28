@@ -65,10 +65,22 @@
                                     <h6 class="mb-0">{{subject}}</h6>
                                     <p class="mb-0 opacity-75">{{detail}}</p>
                                 </div>
-                                <small class="opacity-50 text-nowrap">{{target_date}}</small>
+                                <small class="opacity-50 text-nowrap">{{str_target_date}}</small>
                             </div>
                         </a>
                     {{/todayTodo}}
+                    {{#empty}}
+                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+                            <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                    <h6 class="mb-0">일정없음</h6>
+                                    <p class="mb-0 opacity-75">오늘 계획된 일정이 없습니다.</p>
+                                </div>
+                                <small class="opacity-50 text-nowrap">-</small>
+                            </div>
+                        </a>
+                    {{/empty}}
                 </div>
             </div>
             <div class = "col">

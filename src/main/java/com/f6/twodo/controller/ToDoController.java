@@ -43,6 +43,6 @@ public class ToDoController {
         System.out.println(newToDo.getTarget_date());
         Integer rowcount = this.obj_todo_service.addToDo(newToDo);
         _model.addAttribute("rowcount", rowcount);
-        return "<Script> alert('등록완료') </script>";
+        return "<Script> alert('등록완료'); location.href='/main'; </script>";
     }
 }
