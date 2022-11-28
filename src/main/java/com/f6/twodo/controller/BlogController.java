@@ -29,19 +29,4 @@ public class BlogController {
     public String blogInsert(Model _model) {
         return "bloginsert";
     }
-
-    @GetMapping("/test/blog")
-    public String blogList(Model model){
-
-
-        model.addAttribute("BLOG", this.obj_blog_service.getAllBlog());
-
-        System.out.print(model);
-        return "test";
-
-    }
-    //@GetMapping("/main/blog/insert")
-    //public String blogInsert(Model _model) {
-      //  return "bloginsert";
-    //}
 }

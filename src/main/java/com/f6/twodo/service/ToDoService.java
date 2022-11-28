@@ -19,4 +19,14 @@ public class ToDoService {
         System.out.println("viewTodo : " + id);
         return  obj_todo_mapper.getTodoOnce(id);
     }
+    public Integer modifyToDo(ToDo _modrow) {
+        System.out.println("modifyToDo:" + _modrow.getSubject());
+        Integer rowcount =  this.obj_todo_mapper.modToDo(_modrow);
+        return rowcount;
+    }
+    public Integer delTodo(Integer id) {
+        System.out.println("delTodo : " + id);
+        Integer rowcount =  this.obj_todo_mapper.delToDo(id);
+        return rowcount;
+    }
 }

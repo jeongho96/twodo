@@ -69,4 +69,12 @@
         UPDATE todo SET done = 'Y', modifydate = now()
         WHERE id = #{id}
     </update>
+    <update id="modToDo">
+        UPDATE todo SET subject = #{todo.subject}, detail = #{todo.detail},
+        targetdate = #{todo.str_target_date}, modifydate = now()
+        WHERE id = #{todo.id}
+    </update>
+    <delete id="delToDo">
+        DELETE FROM todo WHERE id = #{id}
+    </delete>
 </mapper>

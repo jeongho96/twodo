@@ -13,6 +13,10 @@ public interface ToDoMapper {
     ToDo getTodoOnce(@Param("id") Integer id);
     List<ToDo> getNextTodo(Integer dispCount);
     Integer addToDo(@Param("todo") ToDo todo);
+    Integer modToDo(@Param("todo") ToDo todo);
+    Integer delToDo(@Param("id") Integer id);
+
+
     Integer doneToDo(Integer todoID);
 
     /*Count*/
