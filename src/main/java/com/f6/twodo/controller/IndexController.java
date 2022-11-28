@@ -16,6 +16,7 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model _model) {
         _model.addAttribute("TestDBs", this.obj_testservice.ReadyTest());
-        return "index";
+        //return "index";
+        return "redirect:/main";
     }
 }
