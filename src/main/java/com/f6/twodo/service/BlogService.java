@@ -22,9 +22,8 @@ public class BlogService {
 
 
     public Integer insertBlog(Blog _newrow){
-
-        System.out.println("Add:" + _newrow.getTitle());
         Integer rowcount = obj_blog_mapper.addBlog(_newrow);
+        System.out.print(rowcount);
         return rowcount;
 
     }

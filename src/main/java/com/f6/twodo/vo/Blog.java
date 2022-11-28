@@ -39,8 +39,5 @@ public class Blog {
 
     }
 
-    public Blog(String _secret){
-        this.secret = _secret;
 
-    }
 }

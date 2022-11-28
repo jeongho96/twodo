@@ -12,7 +12,7 @@
     <insert id="addBlog">
   INSERT INTO blog(secret, title, content, orifilename , filename, locationtag
      , rank,  insertdate, modifydate)
-VALUES ('N', #{blog.title},#{blog.content},#{blog.orifilename},#{blog.filename},#{blog.locationtag},
+VALUES (#{blog.secret}, #{blog.title},#{blog.content},#{blog.orifilename},#{blog.filename},#{blog.locationtag},
 
         #{blog.rank}, now(), now())
 
