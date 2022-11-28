@@ -15,5 +15,12 @@ public interface ToDoMapper {
     Integer addToDo(@Param("todo") ToDo todo);
     Integer doneToDo(Integer todoID);
 
-    Integer getBeforeTodoCount();
+    /*Count*/
+    Integer getBeforeTodoTotalCount();
+    Integer getBeforeTodoDoneCount();
+    Integer getTodayTodoTotalCount();
+    Integer getTodayTodoDoneCount();
+    Integer getNextTodoTotalCount();
+    Integer getNextTodoDoneCount();
+    /*Count*/
 }
