@@ -1,8 +1,13 @@
 package com.f6.twodo.vo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.Date;
 
+@Getter
+@Setter
 public class Blog {
     Integer id;
 
@@ -31,6 +36,11 @@ public class Blog {
         this.insertdate = insertdate;
         this.modifydate = modifydate;
 
+
+    }
+
+    public Blog(String _secret){
+        this.secret = _secret;
 
     }
 }

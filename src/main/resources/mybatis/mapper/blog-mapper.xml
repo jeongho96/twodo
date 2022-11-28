@@ -3,4 +3,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.f6.twodo.mapper.BlogMapper">
+    <select id="getBlogMemory" resultType="com.f6.twodo.vo.Blog">
+        SELECT *
+        FROM blog
+        ORDER BY id DESC
+    </select>
+
+    <insert id="addBlog">
+  INSERT INTO blog(secret, title, content, orifilename , filename, locationtag
+     , rank,  insertdate, modifydate)
+VALUES ('N', #{blog.title},#{blog.content},#{blog.orifilename},#{blog.filename},#{blog.locationtag},
+
+        #{blog.rank}, now(), now())
+
+    </insert>
 </mapper>
