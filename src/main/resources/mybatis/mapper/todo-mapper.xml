@@ -20,4 +20,14 @@
         INSERT INTO todo (subject, detail, targetdate, done, must, insertdate, modifydate)
         VALUES (#{todo.subject}, #{todo.detail}, #{todo.str_target_date}, 'N', 'N', now(), now())
     </insert>
+    <update id="updateToDo">
+        UPDATE todo
+        SET title=#{todo.subject}, #{todo.detail}, #{todo.str_target_date}
+        WHERE id = #{todo.id}
+    </update>
+    <select id="getTodoOnce" resultType="com.f6.twodo.vo.ToDo">
+        SELECT *
+        FROM  todo
+        WHERE id = #{id}
+    </select>
 </mapper>

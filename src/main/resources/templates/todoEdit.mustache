@@ -1,24 +1,30 @@
 {{>common/header}}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <div style="width:100%;height:100%;">
     <div style="width:500px;height:100%;margin:0 auto;">
-        <form action="/main/todo/edit" method="post">
-            <h1>일정을 수정해보세요!</h1>
 
+            <h1>일정을 수정해보세요!</h1>
+            {{#todoOnce}}
             <h3>일정제목</h3>
-            <input type="text" name="subject" >
+            <input type="hidden" id = "id" value="{{id}}">
+            <input type="text" id = "edit_subject" value="{{subject}}">
 
             <h4>일정내용</h4>
-            <input type="text" name="detail" >
+            <input type="text" id ="edit_detail" value="{{detail}}" >
 
             <h4>마감일시</h4>
-            <input type="date" name="target_date" value="2022-11-25" max="2023-12-31" >
+            <input type="date" id="edit_target_date" value="{{str_target_date}}" >
             <br>
             <br>
-            <input type="submit" value="수정" />
-            <input type="submit" value="삭제" />
-        </form>
+            <button id = "edit_button" >수정</button>
+            <button id ="delete_button">삭제</button>
+            {{/todoOnce}}
+
     </div>
 </div>
-{{>common/footer}}
 
+<script src="/js/ajax.js"></script>
+
+{{>common/footer}}

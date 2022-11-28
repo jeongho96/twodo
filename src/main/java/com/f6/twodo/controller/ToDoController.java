@@ -5,10 +5,7 @@ import com.f6.twodo.vo.ToDo;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -44,5 +41,33 @@ public class ToDoController {
         Integer rowcount = this.obj_todo_service.addToDo(newToDo);
         _model.addAttribute("rowcount", rowcount);
         return "<Script> alert('등록완료'); location.href='/main'; </script>";
+    }
+
+    @GetMapping("/main/todo/modify/{id}")
+    public String todomodify(@PathVariable("id") Integer id, Model _model) {
+        _model.addAttribute("todo", id );
+
+        ToDo currentrow = this.obj_todo_service.todomodify(id);
+        _model.addAttribute("todoOnce", currentrow);
+
+        return "todoedit";
+    }
+
+    @PutMapping("/main/todo")
+    public String updateToDo(@RequestBody String id,
+                             @RequestBody String subject,
+                             @RequestBody String detail,
+                             @RequestBody String target_date,
+                             Model _model) {
+        System.out.println("in todoUpdate:" + id);
+        System.out.println("target_date:" + target_date);
+
+//        ToDo updateToDo = new ToDo(subject, detail, target_date);
+//
+//        System.out.println(updateToDo.getSubject());
+//        System.out.println(updateToDo.getTarget_date());
+//        Integer rowcount = this.obj_todo_service.updateToDo(updateToDo);
+//        _model.addAttribute("rowcount", rowcount);
+        return "<Script> alert('수정완료'); location.href='/main'; </script>";
     }
 }
