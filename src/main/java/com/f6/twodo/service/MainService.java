@@ -17,4 +17,15 @@ public class MainService {
         List<ToDo> todayTodo =  obj_todo_mapper.getTodayTodo(dispCount);
         return todayTodo;
     }
+    public List<ToDo> getBeforeTodo(Integer dispCount) {
+        System.out.println("getBeforeTodo");
+        List<ToDo> beforeTodo =  obj_todo_mapper.getBeforeTodo(dispCount);
+        return beforeTodo;
+    }
+
+    public List<ToDo> getNextTodo(Integer dispCount) {
+        System.out.println("getNextTodo");
+        List<ToDo> nextTodo =  obj_todo_mapper.getNextTodo(dispCount);
+        return nextTodo;
+    }
 }

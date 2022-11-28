@@ -25,8 +25,8 @@ public class BlogController {
         return "test";
 
     }
-    //@GetMapping("/main/blog/insert")
-    //public String blogInsert(Model _model) {
-      //  return "bloginsert";
-    //}
+    @GetMapping("/main/blog/insert")
+    public String blogInsert(Model _model) {
+        return "bloginsert";
+    }
 }

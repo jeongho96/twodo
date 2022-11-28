@@ -30,9 +30,15 @@ public class MainController {
 
     @GetMapping("/main")
     public String main(Model _model) {
+        List<ToDo> beforeList = this.obj_mainservice.getBeforeTodo(g_global.getDiplay_todo_list_count());
         List<ToDo> todayList = this.obj_mainservice.getTodayTodo(g_global.getDiplay_todo_list_count());
+        List<ToDo> nextList = this.obj_mainservice.getNextTodo(g_global.getDiplay_todo_list_count());
         _model.addAttribute("todayTodo", todayList);
+        _model.addAttribute("beforeTodo", beforeList);
+        _model.addAttribute("nextTodo", nextList);
         _model.addAttribute("empty",todayList.isEmpty());
+        _model.addAttribute("beforeempty",beforeList.isEmpty());
+        _model.addAttribute("nextempty",nextList.isEmpty());
         return "main";
     }
 }
