@@ -22,4 +22,10 @@ public class MainService {
         List<ToDo> beforeTodo =  obj_todo_mapper.getBeforeTodo(dispCount);
         return beforeTodo;
     }
+
+    public List<ToDo> getNextTodo(Integer dispCount) {
+        System.out.println("getNextTodo");
+        List<ToDo> nextTodo =  obj_todo_mapper.getNextTodo(dispCount);
+        return nextTodo;
+    }
 }
