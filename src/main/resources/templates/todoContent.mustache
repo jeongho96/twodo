@@ -12,7 +12,7 @@
 </script>
 
 <div style="width:100%;height:100%;">
-<div style="width:500px;height:100%;margin:0 auto;">
+    <div style="width:500px;height:100%;margin:0 auto;">
         <h1>등록된 일정</h1>'
         <h3>일정제목</h3>
         <br>
@@ -25,9 +25,26 @@
         <br>
         <p>{{todoOnce.str_target_date}}</p>
         <br>
+        <h4>등록 일시</h4>
         <br>
+        <p>{{todoOnce.insert_date}}</p>
+        <br>
+        <h4>마감 일시</h4>
+        <br>
+        <p>{{todoOnce.str_target_date}}</p>
+        <br>
+        <h4>완료 여부</h4>
+        <br>
+        <p>{{todoOnce.done}}</p>
+        <br>
+        <h4>중요 여부</h4>
+        <br>
+        <p>{{todoOnce.must}}</p>
+        <br>
+
         <input type="button" value="수정하기" />
-        <input type="button" value="완료" onclick="javascript:checkDone(1);"/>
+        <input type="button" value="홈으로" />
+        <input type="button" value="완료" onclick="javascript:checkDone({{todoOnce.id}});"/>
     </div>
 </div>
 
