@@ -27,3 +27,16 @@ INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `ins
 INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test5done', 'testcontent5', now(), 'Y', 'N', now(), now());
 INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test6done', 'testcontent6', now(), 'Y', 'N', now(), now());
 INSERT INTO f6team.todo (`subject`, `detail`, `targetdate`, `done`, `must`, `insertdate`, `modifydate`) VALUES ('test7mustdone', 'testcontent7', now(), 'Y', 'Y', now(), now());
+
+CREATE TABLE f6team.blog (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `secret` CHAR(1) NULL,
+  `title` VARCHAR(45) NULL,
+  `content` TEXT NULL,
+  `orifilename` VARCHAR(255) NULL,
+  `filename` VARCHAR(255) NULL,
+  `locationtag` VARCHAR(45) NULL,
+  `rank` INT NULL,
+  `insertdate` DATETIME NULL,
+  `modifydate` DATETIME NULL,
+  PRIMARY KEY (`id`));

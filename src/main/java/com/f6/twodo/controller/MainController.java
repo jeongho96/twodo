@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -40,5 +42,13 @@ public class MainController {
         _model.addAttribute("beforeempty",beforeList.isEmpty());
         _model.addAttribute("nextempty",nextList.isEmpty());
         return "main";
+    }
+    @GetMapping("/main/tododone/{id}")
+    @ResponseBody
+    public String todoDone(@PathVariable("id") Integer todoID) {
+        if(this.obj_mainservice.doneToDo(todoID) == 1) {
+            return "<script> alert('일정완료'); location.href='/main'; </script>";
+        }
+        return "<script> alert('id 또는 시스템 오류 오류');</script>";
     }
 }

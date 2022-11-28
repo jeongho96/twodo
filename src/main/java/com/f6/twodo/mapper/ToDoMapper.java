@@ -11,7 +11,7 @@ import java.util.List;
 public interface ToDoMapper {
     List<ToDo> getTodayTodo(Integer dispCount);
     List<ToDo> getBeforeTodo(Integer dispCount);
-
     List<ToDo> getNextTodo(Integer dispCount);
     Integer addToDo(@Param("todo") ToDo todo);
+    Integer doneToDo(Integer todoID);
 }

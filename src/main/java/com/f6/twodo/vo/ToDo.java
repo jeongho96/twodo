@@ -18,6 +18,8 @@ public class ToDo {
     Date  target_date;       // 마감일시
     String str_target_date; // 마감일시 (문자열표시)
     String done;        // 완료여부 (Y면 완료, N면 미완료)
+    String state;        // 완료면 객체 있음, 미완이면 객체 없음
+
     String must;        // 중요여부 (Y면 중요, N면 일반)
     Date  insert_date;   // 등록일시
     Date modify_date;   // 수정일시
@@ -31,18 +33,26 @@ public class ToDo {
         this.must = must;
         this.insert_date = insert_date;
         this.modify_date = modify_date;
-        changeDate();
+        makeData();
     }
 
     public ToDo(String _subject, String _detail, Date _target_date) {
         this.subject = _subject;
         this.detail = _detail;
         this.target_date = _target_date;
-        changeDate();
+        makeData();
     }
 
-    private void changeDate() {
+    private void makeData() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");   // yyyy-MM-dd HH:mm:ss
         this.str_target_date = formatter.format(this.target_date);
+        System.out.println("makeData:done-" + done);
+        if(done.equals("Y")) {
+            state = "Y";
+        }
+        else {
+            state = null;
+        }
+        System.out.println("makeData:state-" + state);
     }
 }
