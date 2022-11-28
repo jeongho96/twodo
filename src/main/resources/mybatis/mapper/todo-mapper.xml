@@ -10,6 +10,11 @@
         ORDER BY targetdate DESC
         LIMIT #{dispCount}
     </select>
+     <select id="getTodoOnce" resultType="com.f6.twodo.vo.ToDo">
+         SELECT *
+         FROM  todo
+         WHERE id = #{id}
+     </select>
     <select id="getTodayTodo" resultType="com.f6.twodo.vo.ToDo">
         SELECT *
         FROM todo

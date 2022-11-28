@@ -5,10 +5,7 @@ import com.f6.twodo.vo.ToDo;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -24,6 +21,15 @@ public class ToDoController {
     @GetMapping("/main/todo/insert")
     public String todoInsert(Model _model) {
         return "todoinsert";
+    }
+
+    @GetMapping("/main/todo/view/{id}")
+    public String todoView(@PathVariable("id") Integer view_id, Model _model) {
+        _model.addAttribute("id", view_id);
+
+        ToDo currentrow = this.obj_todo_service.viewToDo(view_id);
+        _model.addAttribute("todoOnce", currentrow);
+        return "todoContent";
     }
 
     @PostMapping("/main/todo")
