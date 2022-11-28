@@ -45,11 +45,29 @@ public class MainController {
 
         return "main";
     }
-    @GetMapping("/main/tododone/{id}")
+    @GetMapping("/main/tododone/{id}/{gotoview}")
     @ResponseBody
-    public String todoDone(@PathVariable("id") Integer todoID) {
-        if(this.obj_mainservice.doneToDo(todoID) == 1) {
-            return "<script> alert('일정완료'); location.href='/main'; </script>";
+    public String todoDone(@PathVariable("id") Integer todoID, @PathVariable("gotoview") Boolean gotoview) {
+        Integer result = this.obj_mainservice.doneToDo(todoID);
+        System.out.println("todoDone" + gotoview + "/" + result);
+        if(result == 1) {
+            if(gotoview == true) {
+                String ret = "<script> alert('일정완료[상세로]'); location.href='/main/todo/view/" + todoID + "'; </script>";
+                System.out.println("ret" + ret);
+                return ret;
+            }
+            else {
+                return "<script> alert('일정완료'); location.href='/main'; </script>";
+            }
+        }
+        return "<script> alert('id 또는 시스템 오류 오류');</script>";
+    }
+    @GetMapping("/main/tododel/{id}")
+    @ResponseBody
+    public String todoDel(@PathVariable("id") Integer todoID) {
+        Integer result = this.obj_mainservice.delTodo(todoID);
+        if(result == 1) {
+            return "<script> alert('삭제완료'); location.href='/main'; </script>";
         }
         return "<script> alert('id 또는 시스템 오류 오류');</script>";
     }

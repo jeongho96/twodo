@@ -2,9 +2,9 @@
 
 <script>
     function checkDone(id) {
-        var r = confirm("일정을 완료하셨습니까?");
+        var r = confirm("일정을 완료하시겠습니까?");
         if (r == true) {
-            location.href = "/main/tododone/" + id;
+            location.href = "/main/tododone/" + id + "/false";
         } else {
             alert("취소하셨습니다");
         }
