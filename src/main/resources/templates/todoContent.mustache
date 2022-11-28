@@ -2,17 +2,9 @@
 
 <script>
     function checkDone(id) {
-        var r = confirm("일정을 완료하시겠습니까?");
+        var r = confirm("일정을 완료하셨습니까?");
         if (r == true) {
-            location.href = "/main/tododone/" + id + "/true";
-        } else {
-            alert("취소하셨습니다");
-        }
-    }
-    function deleteTodo(id) {
-        var r = confirm("일정을 삭제하시겠습니까?");
-        if (r == true) {
-            location.href = "/main/tododel/" + id;
+            location.href = "/main/tododone/" + id;
         } else {
             alert("취소하셨습니다");
         }
@@ -51,15 +43,8 @@
         <br>
 
         <input type="button" value="수정하기" />
-        <input type="button" value="홈으로" onclick="location.href='/main';"/>
-        <input type="button" value="삭제" onclick="javascript:deleteTodo({{todoOnce.id}});"/>
-        {{#state}}
-        {{/state}}
-        {{^state}}
-            <input type="button" value="완료" onclick="javascript:checkDone({{todoOnce.id}});"/>
-        {{/state}}
-        <br>
-        <br>
+        <input type="button" value="홈으로" />
+        <input type="button" value="완료" onclick="javascript:checkDone({{todoOnce.id}});"/>
     </div>
 </div>
 

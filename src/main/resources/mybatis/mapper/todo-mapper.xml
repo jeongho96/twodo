@@ -41,8 +41,4 @@
         UPDATE todo SET done = 'Y', modifydate = now()
         WHERE id = #{id}
     </update>
-    <delete id="delToDo">
-        DELETE FROM todo
-        WHERE id = #{id}
-    </delete>
 </mapper>

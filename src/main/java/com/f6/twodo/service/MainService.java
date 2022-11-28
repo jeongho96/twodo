@@ -39,10 +39,4 @@ public class MainService {
         Integer rowcount =  obj_todo_mapper.doneToDo(_todo_id);
         return rowcount;
     }
-
-    public Integer delTodo(Integer _todo_id) {
-        System.out.println("delTodo:" + _todo_id.toString());
-        Integer rowcount =  obj_todo_mapper.delToDo(_todo_id);
-        return rowcount;
-    }
 }
