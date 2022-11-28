@@ -41,7 +41,27 @@ public class MainController {
         _model.addAttribute("empty",todayList.isEmpty());
         _model.addAttribute("beforeempty",beforeList.isEmpty());
         _model.addAttribute("nextempty",nextList.isEmpty());
-        _model.addAttribute("getBeforeTodoCount",this.obj_mainservice.getBeforeTodoCount());
+
+        int BTTC = this.obj_mainservice.getBeforeTodoToTalCount();
+        int BTDC = this.obj_mainservice.getBeforeTodoDoneCount();
+        int BI = BTTC-BTDC;
+        _model.addAttribute("getBeforeTodoToTalCount",BTTC);
+        _model.addAttribute("getBeforeTodoDoneCount",BTDC);
+        _model.addAttribute("getBeforeIncomplete",BI);
+
+        int TTTC = this.obj_mainservice.getTodayTodoTotalCount();
+        int TTDC = this.obj_mainservice.getTodayTodoDoneCount();
+        int TI = TTTC - TTDC;
+        _model.addAttribute("getTodayTodoToTalCount",TTTC);
+        _model.addAttribute("getTodayTodoDoneCount",TTDC);
+        _model.addAttribute("getTodayIncomplete", TI);
+
+        int NTTC = this.obj_mainservice.getNextTodoTotalCount();
+        int NTDC = this.obj_mainservice.getNextTodoDoneCount();
+        int NI = NTTC - NTDC;
+        _model.addAttribute("getNextTodoTotalCount",NTTC);
+        _model.addAttribute("getNextTodoDoneCount",NTDC);
+        _model.addAttribute("getNextIncomplete", NI);
 
         return "main";
     }
