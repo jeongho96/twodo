@@ -1,23 +1,27 @@
 package com.f6.twodo.vo;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Blog {
     Integer id;
+
+    String secret;
     String title;
     String content;
     String orifilename;
     String filename;
     String locationtag;
     Integer rank;
-    LocalDateTime insertdate;
-    LocalDateTime modifydate;
+    Date insertdate;
+    Date modifydate;
 
 
-    public Blog(Integer id, String title, String content, String orifilename, String filename,
-                String locationtag, Integer rank, LocalDateTime insertdate,LocalDateTime modifydate) {
+    public Blog(Integer id,String secret, String title, String content, String orifilename, String filename,
+                String locationtag, Integer rank, Date insertdate,Date modifydate) {
 
         this.id = id;
+        this.secret = secret;
         this.title = title;
         this.content = content;
         this.orifilename = orifilename;
