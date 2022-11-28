@@ -3,11 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.f6.twodo.mapper.BlogMapper">
-
     <select id="getBlogMemory" resultType="com.f6.twodo.vo.Blog">
         SELECT *
         FROM blog
         ORDER BY id DESC
-
     </select>
 </mapper>
